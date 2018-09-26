@@ -1,0 +1,68 @@
+4. Using the shell
+>>> Book.objects.create(name="C sharp")
+<Book: Book object>
+>>> Book.objects.create(name="Java")
+<Book: Book object>
+>>> Book.objects.create(name="Python")
+<Book: Book object>
+>>> Book.objects.create(name="PHP")
+<Book: Book object>
+>>> Book.objects.create(name="Ruby")
+<Book: Book object>
+>>> Author.objects.create(first_name="Mike")
+<Author: Author object>
+>>> Author.objects.create(first_name="Speros")
+<Author: Author object>
+>>> Author.objects.create(first_name="John")
+<Author: Author object>
+>>> Author.objects.create(first_name="Jadee")
+<Author: Author object>
+>>> Author.objects.create(first_name="Jay")
+
+6. Using the shell
+6_1.
+>>> b=Book.objects.get(id=5)
+>>> b,name = "C#"
+>>> b.save()
+6_2
+>>> b=Author.objects.get(id=5)
+>>> b.first_name ="Ketul"
+>>> b.save()
+6_3
+>>> this_book = Book.objects.get(id = 1)
+>>> this_author = Author.objects.get(id=1)
+>>> this_author.books.add(this_book)
+>>> this_book2 = Book.objects.get(id = 2)
+>>> this_author.books.add(this_book2)
+6_4
+>>> this_book3 = Book.objects.get(id = 3)
+>>> this_author2 = Author.objects.get(id=2)
+>>> this_author2.books.add(this_book)
+>>> this_author2.books.add(this_book2)
+>>> this_author2.books.add(this_book3)
+6_5
+>>> this_author3 = Author.objects.get(id=3)
+>>> this_book4 = Book.objects.get(id = 4)
+>>> this_book5 = Book.objects.get(id = 5)
+>>> this_author4 = Author.objects.get(id=4)
+>>> this_author3.books.add(this_book)
+>>> this_author3.books.add(this_book2)
+>>> this_author3.books.add(this_book3)
+>>> this_author3.books.add(this_book4)
+6_6
+>>> this_author4.books.add(this_book)
+>>> this_author4.books.add(this_book2)
+>>> this_author4.books.add(this_book3)
+>>> this_author4.books.add(this_book4)
+>>> this_author4.books.add(this_book5)
+6_7
+>>> Author.objects.filter(books="3")
+6_8
+>>> Author.objects.first(books="3")
+6_9
+>>> this_book2.authors.add(author5)
+>>> this_book2.save()
+6_10
+>>> author3.books.all()
+6_11
+>>> author2.books.all()
